@@ -1,16 +1,16 @@
-0x16. C - Simple Shell
-TEAM :
+# **0x16. C - Simple Shell**
+## TEAM :
 1-SALIM
 2-AHMED
-TASK :
----------mandatory--------
+## TASK :
+### ---------mandatory--------
 0. Betty would be proud
 1. Simple shell 0.1
 2. Simple shell 0.2
 3. Simple shell 0.3
 4. Simple shell 0.4
 5. Simple shell 1.0
----------advanced-------
+### ---------advanced-------
 6. Simple shell 0.1.1
 7. Simple shell 0.2.1
 8. Simple shell 0.4.1
