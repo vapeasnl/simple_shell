@@ -1,7 +1,7 @@
 # **0x16. C - Simple Shell**
 ## TEAM :
-1-SALIM
-2-AHMED
+>1-SALIM
+>2-AHMED
 ## TASK :
 ### ---------mandatory--------
 0. Betty would be proud
