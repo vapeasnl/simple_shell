@@ -8,7 +8,15 @@ char **tokenizer(char *l)
     if (!l)
         return (NULL);
     tmp = _stdrup(l);
+
     token = strtok(tmp, DELIM);
+    if (token == NULL)
+    {
+        free(l), l = NULL;
+        free(tmp), tmp = NULL;
+        return (NULL);
+
+    }
     while (token)
     {
         count++;
@@ -26,7 +34,7 @@ char **tokenizer(char *l)
     token = strtok(l, DELIM);
     while (token)
     {
-        cmd[i] = token;
+        cmd[i] = _stdrup(token);
         token = strtok(NULL, DELIM);
         i++;
     }
