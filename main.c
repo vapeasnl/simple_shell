@@ -13,7 +13,6 @@ int main(int argc, char **argv)
     (void) argc;
 
 
-
     while (1)
     {
         l = read_line();
@@ -24,8 +23,10 @@ int main(int argc, char **argv)
             return (stat);
         }
         
-
         cmd = tokenizer(l);
+        if (!cmd)
+            continue;
+        
         stat = _execute(cmd, argv);
     }
 
