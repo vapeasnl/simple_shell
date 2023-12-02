@@ -21,9 +21,12 @@ int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 void freearray(char **arr);
 char **tokenizer(char *l);
-int _execute(char **cmd, char **argv);
+int _execute(char **cmd, char **argv, int index);
 char *_getenv(char *var);
 char *_getpath(char *cmd);
+void printerror(char *name, char *cmd, int index);
+void reverse_string(char *str, int lenght);
+char *_itoa(int n);
 
 
 

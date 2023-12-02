@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 {
     char *l = NULL;
     char ** cmd = NULL;
-    int stat;
+    int stat, index = 0;
     (void) argc;
 
 
@@ -22,12 +22,13 @@ int main(int argc, char **argv)
                 write(STDOUT_FILENO, "\n", 1);
             return (stat);
         }
+        index++;
         
         cmd = tokenizer(l);
         if (!cmd)
             continue;
         
-        stat = _execute(cmd, argv);
+        stat = _execute(cmd, argv, index);
     }
 
 
