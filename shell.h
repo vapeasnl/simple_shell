@@ -22,7 +22,7 @@ int _strlen(char *s);
 void freearray(char **arr);
 char **tokenizer(char *l);
 int _execute(char **cmd, char **argv);
-
+char *_getenv(char *var);
 
 
 #endif

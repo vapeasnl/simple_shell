@@ -1,5 +1,5 @@
 #include "shell.h"
-char *_getenv(char *var);
+char *_getenv(char *var)
 {
     char *tmp, *key, *val, *env;
     int i;
