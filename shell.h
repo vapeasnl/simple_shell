@@ -23,6 +23,8 @@ void freearray(char **arr);
 char **tokenizer(char *l);
 int _execute(char **cmd, char **argv);
 char *_getenv(char *var);
+char *_getpath(char *cmd);
+
 
 
 #endif
