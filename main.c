@@ -27,8 +27,11 @@ int main(int argc, char **argv)
         cmd = tokenizer(l);
         if (!cmd)
             continue;
-        
-        stat = _execute(cmd, argv, index);
+
+        if (is_builtin(cmd[0]))
+            handle_builtin(cmd, argv, &stat, index);
+        else
+            stat = _execute(cmd, argv, index);
     }
 
 

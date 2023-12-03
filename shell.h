@@ -27,6 +27,13 @@ char *_getpath(char *cmd);
 void printerror(char *name, char *cmd, int index);
 void reverse_string(char *str, int lenght);
 char *_itoa(int n);
+void handle_builtin(char ** cmd, char **argv, int *stat, int index);
+int is_builtin(char *cmd);
+void exit_shell(char **cmd, int *stat);
+void print_env(char **cmd, int *stat);
+
+
+
 
 
 
