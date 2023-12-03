@@ -29,8 +29,11 @@ void reverse_string(char *str, int lenght);
 char *_itoa(int n);
 void handle_builtin(char ** cmd, char **argv, int *stat, int index);
 int is_builtin(char *cmd);
-void exit_shell(char **cmd, int *stat);
+void exit_shell(char **cmd,char **argv, int *stat, int index);
 void print_env(char **cmd, int *stat);
+int _atoi(char *str);
+int is_positive_number(char *str);
+
 
 
 
