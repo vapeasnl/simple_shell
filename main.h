@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <errno.h>
-#include <fcnl.h>
+#include <fcntl.h>
 
 #define DELIM " \t\n"
 extern char **environ;

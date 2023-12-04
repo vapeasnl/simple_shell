@@ -24,7 +24,7 @@ char *_getpath(char *cmd)
 	if (!path_env)
 		return (NULL);
 
-	dir = strtok(path_env, ":")
+	dir = strtok(path_env, ":");
 	while (dir)
 	{
 

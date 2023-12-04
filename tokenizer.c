@@ -7,7 +7,7 @@
 char **tokenizer(char *l)
 {
 	char *token = NULL, tmp = NULL;
-	char **cmd == NULL;
+	char **cmd = NULL;
 	int count = 0, i = 0;
 
 	if (!l)
