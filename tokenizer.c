@@ -12,7 +12,7 @@ char **tokenizer(char *l)
 
 	if (!l)
 		return (NULL);
-	tmp = _stdrup(l);
+	tmp = _strdup(l);
 	token = strtok(tmp, DELIM);
 	if (token == NULL)
 	{
@@ -36,7 +36,7 @@ char **tokenizer(char *l)
 	token = strtok(l, DELIM);
 	while (token)
 	{
-		cmd[i] = _stdrup(token);
+		cmd[i] = _strdup(token);
 		token = strtok(NULL, DELIM);
 		i++;
 	}

@@ -23,9 +23,9 @@ int _execute(char **cmd, char **argv, int index)
 	child = fork();
 	if (child == 0)
 	{
-		if (execve(full_cmd, cmd[0], cmd, environ) == -1)
+		if (execve(full_cmd, cmd, environ) == -1)
 		{
-			free(full_cmd), full_cmd = NULL;
+			free(full_cmd);
 			freearray(cmd);
 		}
 	}
@@ -33,7 +33,7 @@ int _execute(char **cmd, char **argv, int index)
 	{
 		waitpid(child, &stat, 0);
 		freearray(cmd);
-		free(full_cmd), full_cmd = NULL;
+		free(full_cmd);
 	}
 	return (WEXITSTATUS(stat));
 }

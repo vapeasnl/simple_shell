@@ -15,7 +15,7 @@ extern char **environ;
 
 char *read_line(void);
 char *_strcpy(char *dest, char *src);
-char *_stdrup(const char *str);
+char *_strdup(const char *str);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);

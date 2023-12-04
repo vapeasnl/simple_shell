@@ -18,11 +18,11 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 /**
-* _stdrup --
+* _strdup --
 * @str: --
 * Return: --
 */
-char *_stdrup(const char *str)
+char *_strdup(const char *str)
 {
 	char *ptr;
 	int i, lenght = 0;

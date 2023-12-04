@@ -88,7 +88,7 @@ char *_itoa(int n)
 	buff[i] = '\0';
 	reverse_string(buff, i);
 
-	return (_stdrup(buff));
+	return (_strdup(buff));
 
 }
 /**
