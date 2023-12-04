@@ -6,7 +6,7 @@
 */
 char **tokenizer(char *l)
 {
-	char *token = NULL, tmp = NULL;
+	char *token = NULL, *tmp = NULL;
 	char **cmd = NULL;
 	int count = 0, i = 0;
 
@@ -16,8 +16,8 @@ char **tokenizer(char *l)
 	token = strtok(tmp, DELIM);
 	if (token == NULL)
 	{
-		free(l), l = NULL;
-		free(tmp), tmp = NULL;
+		free(l);
+		free(tmp);
 		return (NULL);
 
 	}
@@ -26,11 +26,11 @@ char **tokenizer(char *l)
 		count++;
 		token = strtok(NULL, DELIM);
 	}
-	free(tmp), tmp = NULL;
+	free(tmp);
 	cmd = malloc(sizeof(char *) * (count + 1));
 	if (!cmd)
 	{
-		free(l), l = NULL;
+		free(l);
 		return (NULL);
 	}
 	token = strtok(l, DELIM);
