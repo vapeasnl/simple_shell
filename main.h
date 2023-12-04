@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +11,7 @@
 #include <fcnl.h>
 
 #define DELIM " \t\n"
-extern char **environ; 
+extern char **environ;
 
 char *read_line(void);
 char *_strcpy(char *dest, char *src);
@@ -27,17 +27,11 @@ char *_getpath(char *cmd);
 void printerror(char *name, char *cmd, int index);
 void reverse_string(char *str, int lenght);
 char *_itoa(int n);
-void handle_builtin(char ** cmd, char **argv, int *stat, int index);
+void handle_builtin(char **cmd, char **argv, int *stat, int index);
 int is_builtin(char *cmd);
-void exit_shell(char **cmd,char **argv, int *stat, int index);
+void exit_shell(char **cmd, char **argv, int *stat, int index);
 void print_env(char **cmd, int *stat);
 int _atoi(char *str);
 int is_positive_number(char *str);
-
-
-
-
-
-
 
 #endif

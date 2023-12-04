@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
 * main - Simple Shell main fct
 * @argc: argument
@@ -7,32 +7,30 @@
 */
 int main(int argc, char **argv)
 {
-    char *l = NULL;
-    char ** cmd = NULL;
-    int stat, index = 0;
-    (void) argc;
+	char *l = NULL;
+	char **cmd = NULL;
+	int stat, index = 0;
+	(void) argc;
 
 
-    while (1)
-    {
-        l = read_line();
-        if (l == NULL)
-        {
-            if (isatty(STDIN_FILENO))
-                write(STDOUT_FILENO, "\n", 1);
-            return (stat);
-        }
-        index++;
-        
-        cmd = tokenizer(l);
-        if (!cmd)
-            continue;
+	while (1)
+	{
+		l = read_line();
+		if (l == NULL)
+		{
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			return (stat);
+		}
+		index++;
 
-        if (is_builtin(cmd[0]))
-            handle_builtin(cmd, argv, &stat, index);
-        else
-            stat = _execute(cmd, argv, index);
-    }
+		cmd = tokenizer(l);
+		if (!cmd)
+			continue;
 
-
+		if (is_builtin(cmd[0]))
+			handle_builtin(cmd, argv, &stat, index);
+		else
+			stat = _execute(cmd, argv, index);
+	}
 }
