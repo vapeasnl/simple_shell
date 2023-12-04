@@ -6,7 +6,7 @@
 */
 int is_builtin(char *cmd)
 {
-	char builtin[] = {
+	char *builtin[] = {
 		"exit", "env", "setenv",
 		"cd", NULL
 	};
@@ -14,7 +14,7 @@ int is_builtin(char *cmd)
 
 	for (i = 0; builtin[i]; i++)
 	{
-		if (_strcmp(cmd, builtin[i] == 0))
+		if (_strcmp(cmd, builtin[i]) == 0)
 			return (1);
 	}
 	return (0);

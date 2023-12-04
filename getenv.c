@@ -6,7 +6,7 @@
 */
 char *_getenv(char *var)
 {
-	char *tmp, *key, *val, env;
+	char *tmp, *key, *val, *env;
 	int i;
 
 	for (i = 0; environ[i]; i++)
@@ -18,7 +18,7 @@ char *_getenv(char *var)
 			val = strtok(NULL, "\n");
 			env = _strdup(val);
 			free(tmp);
-			return (val);
+			return (env);
 		}
 		free(tmp), tmp = NULL;
 	}
