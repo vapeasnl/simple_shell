@@ -16,8 +16,8 @@ char **tokenizer(char *l)
 	token = strtok(tmp, DELIM);
 	if (token == NULL)
 	{
-		free(l);
-		free(tmp);
+		free(l), l = NULL;
+		free(tmp), tmp = NULL;
 		return (NULL);
 
 	}
@@ -26,7 +26,7 @@ char **tokenizer(char *l)
 		count++;
 		token = strtok(NULL, DELIM);
 	}
-	free(tmp);
+	free(tmp), tmp = NULL;
 	cmd = malloc(sizeof(char *) * (count + 1));
 	if (!cmd)
 	{
