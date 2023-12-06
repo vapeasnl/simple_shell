@@ -11,7 +11,7 @@ int _atoi(char *str)
 	for (i = 0; str[i]; i++)
 	{
 		num *= 10;
-		num *= (str[i] - '0');
+		num += (str[i] - '0');
 	}
 	return (num);
 }
