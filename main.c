@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 {
 	char *l = NULL;
 	char **cmd = NULL;
-	int stat, index = 0;
+	int stat = 0, index = 0;
 	(void) argc;
 
 
