@@ -1,45 +1,5 @@
 #include "main.h"
 /**
-* _atoi --
-* @str: --
-* Return: --
-*/
-int _atoi(char *str)
-{
-	int i, n = 0;
-
-	for (i = 0; str[i]; i++)
-	{
-		n *= 10;
-		n += (str[i] - '0');
-	}
-	return (n);
-}
-/**
-* _readline --
-* Return: --
-*/
-char *_readline(void)
-{
-	char *l = NULL;
-	size_t len = 0;
-	ssize_t n;
-
-
-	if (isatty(STDIN_FILENO))
-	write(STDOUT_FILENO, "$ ", 2);
-	n = getline(&l, &len, stdin);
-	if (n == -1)
-	{
-		free(l);
-		return (NULL);
-	}
-
-
-	return (l);
-}
-
-/**
 * _getpath --
 * @cmd: --
 * Return: --
@@ -110,4 +70,27 @@ char *_getenv(char *var)
 		free(tmp), tmp = NULL;
 	}
 	return (NULL);
+}
+/**
+* _readline --
+* Return: --
+*/
+char *_readline(void)
+{
+	char *l = NULL;
+	size_t len = 0;
+	ssize_t n;
+
+
+	if (isatty(STDIN_FILENO))
+	write(STDOUT_FILENO, "$ ", 2);
+	n = getline(&l, &len, stdin);
+	if (n == -1)
+	{
+		free(l);
+		return (NULL);
+	}
+
+
+	return (l);
 }

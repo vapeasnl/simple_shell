@@ -65,33 +65,6 @@ void _rstring(char *str, int lenght)
 	}
 }
 /**
-* _itoa --
-* @n: --
-* Return: --
-*/
-char *_itoa(int n)
-{
-	char buff[25];
-	int i = 0;
-
-	if (n == 0)
-		buff[i++] = '0';
-	else
-	{
-		while (n > 0)
-		{
-			buff[i++] = (n % 10) + '0';
-			n /= 10;
-		}
-	}
-
-	buff[i] = '\0';
-	_rstring(buff, i);
-
-	return (_dup(buff));
-
-}
-/**
 * _positive --
 * @str: --
 * Return: --
