@@ -1,11 +1,11 @@
 #include "main.h"
 /**
-* _strcpy --
+* _cpy --
 * @dest: --
 * @src: --
 * Return: --
 */
-char *_strcpy(char *dest, char *src)
+char *_cpy(char *dest, char *src)
 {
 	int i = 0;
 
@@ -18,11 +18,11 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 /**
-* _strdup --
+* _dup --
 * @str: --
 * Return: --
 */
-char *_strdup(const char *str)
+char *_dup(const char *str)
 {
 	char *ptr;
 	int i, lenght = 0;
@@ -43,12 +43,12 @@ char *_strdup(const char *str)
 	return (ptr);
 }
 /**
-* _strcat --
+* _cat --
 * @dest: --
 * @src: --
 * Return: --
 */
-char *_strcat(char *dest, char *src)
+char *_cat(char *dest, char *src)
 {
 	char *p = dest;
 
@@ -65,12 +65,12 @@ char *_strcat(char *dest, char *src)
 	return (dest);
 }
 /**
-* _strcmp --
+* _cmp --
 * @s1: --
 * @s2: --
 * Return: --
 */
-int _strcmp(char *s1, char *s2)
+int _cmp(char *s1, char *s2)
 {
 	int cmp;
 
@@ -86,11 +86,11 @@ int _strcmp(char *s1, char *s2)
 	return (cmp);
 }
 /**
-* _strlen --
+* _len --
 * @s: --
 * Return: --
 */
-int _strlen(char *s)
+int _len(char *s)
 {
 	int lenght = 0;
 

@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 
 	while (1)
 	{
-		l = read_line();
+		l = _readline();
 		if (l == NULL)
 		{
 			if (isatty(STDIN_FILENO))
@@ -24,13 +24,13 @@ int main(int argc, char **argv)
 		}
 		index++;
 
-		cmd = tokenizer(l);
+		cmd = tkn(l);
 		if (!cmd)
 			continue;
 
-		if (is_builtin(cmd[0]))
-			handle_builtin(cmd, argv, &stat, index);
+		if (_ib(cmd[0]))
+			_hb(cmd, argv, &stat, index);
 		else
-			stat = _execute(cmd, argv, index);
+			stat = _exec(cmd, argv, index);
 	}
 }

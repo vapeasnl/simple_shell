@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-* freearray --
+* _farray --
 * @arr: --
 * Return: --
 */
-void freearray(char **arr)
+void _farray(char **arr)
 {
 	int i;
 
@@ -20,36 +20,36 @@ void freearray(char **arr)
 	free(arr), arr = NULL;
 }
 /**
-* printerror --
+* _errorprint --
 * @name: --
 * @cmd: --
 * @index: --
 * Return: --
 */
-void printerror(char *name, char *cmd, int index)
+void _errorprint(char *name, char *cmd, int index)
 {
 	char *idx, msg[] = ": not found\n";
 
 	idx = _itoa(index);
 
-	write(STDERR_FILENO, name, _strlen(name));
+	write(STDERR_FILENO, name, _len(name));
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, idx, _strlen(idx));
+	write(STDERR_FILENO, idx, _len(idx));
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, cmd, _strlen(cmd));
-	write(STDERR_FILENO, msg, _strlen(msg));
+	write(STDERR_FILENO, cmd, _len(cmd));
+	write(STDERR_FILENO, msg, _len(msg));
 
 	free(idx);
 
 
 }
 /**
-* reverse_string --
+* _rstring --
 * @str: --
 * @lenght: --
 * Return: --
 */
-void reverse_string(char *str, int lenght)
+void _rstring(char *str, int lenght)
 {
 	char tmp;
 	int start = 0;
@@ -86,17 +86,17 @@ char *_itoa(int n)
 	}
 
 	buff[i] = '\0';
-	reverse_string(buff, i);
+	_rstring(buff, i);
 
-	return (_strdup(buff));
+	return (_dup(buff));
 
 }
 /**
-* is_positive_number --
+* _positive --
 * @str: --
 * Return: --
 */
-int is_positive_number(char *str)
+int _positive(char *str)
 {
 	int i;
 

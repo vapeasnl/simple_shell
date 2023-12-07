@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-* is_builtin --
+* _ib --
 * @cmd: --
 * Return: --
 */
-int is_builtin(char *cmd)
+int _ib(char *cmd)
 {
 	char *builtin[] = {
 		"exit", "env", "setenv",
@@ -14,79 +14,79 @@ int is_builtin(char *cmd)
 
 	for (i = 0; builtin[i]; i++)
 	{
-		if (_strcmp(cmd, builtin[i]) == 0)
+		if (_cmp(cmd, builtin[i]) == 0)
 			return (1);
 	}
 	return (0);
 }
 /**
-* handle_builtin --
+* _hb --
 * @cmd: --
 * @argv: --
 * @stat: --
 * @index: --
 * Return: --
 */
-void handle_builtin(char **cmd, char **argv, int *stat, int index)
+void _hb(char **cmd, char **argv, int *stat, int index)
 {
-	if (_strcmp(cmd[0], "exit") == 0)
-	exit_shell(cmd, argv, stat, index);
+	if (_cmp(cmd[0], "exit") == 0)
+	_exit_sh(cmd, argv, stat, index);
 
-	else if (_strcmp(cmd[0], "env") == 0)
-		print_env(cmd, stat);
+	else if (_cmp(cmd[0], "env") == 0)
+		_printenv(cmd, stat);
 }
 /**
-* exit_shell --
+* _exit_sh --
 * @cmd: --
 * @argv: --
 * @stat: --
 * @index: --
 * Return: --
 */
-void exit_shell(char **cmd, char **argv, int *stat, int index)
+void _exit_sh(char **cmd, char **argv, int *stat, int index)
 {
 	int exit_value = (*stat);
 	char *idx, msg[] = ": exit: Illegal number: ";
 
 	if (cmd[1])
 	{
-		if (is_positive_number(cmd[1]))
+		if (_positive(cmd[1]))
 		{
 			exit_value = _atoi(cmd[1]);
 		}
 		else
 		{
 			idx = _itoa(index);
-			write(STDERR_FILENO, argv[0], _strlen(argv[0]));
+			write(STDERR_FILENO, argv[0], _len(argv[0]));
 			write(STDERR_FILENO, ": ", 2);
-			write(STDERR_FILENO, idx, _strlen(idx));
-			write(STDERR_FILENO, msg, _strlen(msg));
-			write(STDERR_FILENO, cmd[1], _strlen(cmd[1]));
+			write(STDERR_FILENO, idx, _len(idx));
+			write(STDERR_FILENO, msg, _len(msg));
+			write(STDERR_FILENO, cmd[1], _len(cmd[1]));
 			write(STDERR_FILENO, "\n", 1);
 			free(idx);
-			freearray(cmd);
+			_farray(cmd);
 			(*stat) = 2;
 			return;
 		}
 	}
-	freearray(cmd);
+	_farray(cmd);
 	exit(exit_value);
 }
 /**
-* print_env --
+* _printenv --
 * @cmd: --
 * @stat: --
 * Return: --
 */
-void print_env(char **cmd, int *stat)
+void _printenv(char **cmd, int *stat)
 {
 	int i;
 
 	for (i = 0; environ[i]; i++)
 	{
-		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, environ[i], _len(environ[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
-	freearray(cmd);
+	_farray(cmd);
 	(*stat) = 0;
 }

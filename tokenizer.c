@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-* tokenizer --
+* tkn --
 * @l: --
 * Return: --
 */
-char **tokenizer(char *l)
+char **tkn(char *l)
 {
 	char *token = NULL, *tmp = NULL;
 	char **cmd = NULL;
@@ -12,7 +12,7 @@ char **tokenizer(char *l)
 
 	if (!l)
 		return (NULL);
-	tmp = _strdup(l);
+	tmp = _dup(l);
 	token = strtok(tmp, DELIM);
 	if (token == NULL)
 	{
@@ -36,7 +36,7 @@ char **tokenizer(char *l)
 	token = strtok(l, DELIM);
 	while (token)
 	{
-		cmd[i] = _strdup(token);
+		cmd[i] = _dup(token);
 		token = strtok(NULL, DELIM);
 		i++;
 	}
