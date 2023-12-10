@@ -1,43 +1,42 @@
 #include "main.h"
 /**
-* tkn --
+* _tkn --
 * @l: --
 * Return: --
 */
-char **tkn(char *l)
+char **_tkn(char *l)
 {
-	char *token = NULL, *tmp = NULL;
-	char **cmd = NULL;
-	int count = 0, i = 0;
+	int cnt = 0, i = 0;
+	char *tkn = NULL, *tmp = NULL, **cmd = NULL;
 
 	if (!l)
 		return (NULL);
 	tmp = _dup(l);
-	token = strtok(tmp, DELIM);
-	if (token == NULL)
+	tkn = strtok(tmp, DELIM);
+	if (tkn == NULL)
 	{
 		free(l), l = NULL;
 		free(tmp), tmp = NULL;
 		return (NULL);
 
 	}
-	while (token)
+	while (tkn)
 	{
-		count++;
-		token = strtok(NULL, DELIM);
+		cnt++;
+		tkn = strtok(NULL, DELIM);
 	}
 	free(tmp), tmp = NULL;
-	cmd = malloc(sizeof(char *) * (count + 1));
+	cmd = malloc(sizeof(char *) * (cnt + 1));
 	if (!cmd)
 	{
 		free(l);
 		return (NULL);
 	}
-	token = strtok(l, DELIM);
-	while (token)
+	tkn = strtok(l, DELIM);
+	while (tkn)
 	{
-		cmd[i] = _dup(token);
-		token = strtok(NULL, DELIM);
+		cmd[i] = _dup(tkn);
+		tkn = strtok(NULL, DELIM);
 		i++;
 	}
 	free(l), l = NULL;

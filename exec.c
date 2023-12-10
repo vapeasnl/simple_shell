@@ -8,9 +8,9 @@
 */
 int _exec(char **cmd, char **argv, int index)
 {
+	int st;
 	char *ccmd;
 	pid_t child;
-	int st;
 
 	ccmd = _getpath(cmd[0]);
 	if (!ccmd)

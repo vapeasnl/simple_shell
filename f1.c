@@ -16,7 +16,6 @@ void _farray(char **arr)
 		free(arr[i]);
 		arr[i] = NULL;
 	}
-
 	free(arr), arr = NULL;
 }
 /**
@@ -31,17 +30,13 @@ void _errorprint(char *name, char *cmd, int index)
 	char *idx, msg[] = ": not found\n";
 
 	idx = _itoa(index);
-
 	write(STDERR_FILENO, name, _len(name));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, idx, _len(idx));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, cmd, _len(cmd));
 	write(STDERR_FILENO, msg, _len(msg));
-
 	free(idx);
-
-
 }
 /**
 * _rstring --
@@ -52,8 +47,7 @@ void _errorprint(char *name, char *cmd, int index)
 void _rstring(char *str, int lenght)
 {
 	char tmp;
-	int start = 0;
-	int end = lenght - 1;
+	int start = 0, end = lenght - 1;
 
 	while (start < end)
 	{

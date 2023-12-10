@@ -6,15 +6,15 @@
 */
 int _ib(char *cmd)
 {
-	char *builtin[] = {
+	char *built_in[] = {
 		"exit", "env", "setenv",
 		"cd", NULL
 	};
 	int i;
 
-	for (i = 0; builtin[i]; i++)
+	for (i = 0; built_in[i]; i++)
 	{
-		if (_cmp(cmd, builtin[i]) == 0)
+		if (_cmp(cmd, built_in[i]) == 0)
 			return (1);
 	}
 	return (0);
@@ -45,14 +45,14 @@ void _hb(char **cmd, char **argv, int *stat, int index)
 */
 void _exit_sh(char **cmd, char **argv, int *stat, int index)
 {
-	int exit_value = (*stat);
+	int exit_v = (*stat);
 	char *idx, msg[] = ": exit: Illegal number: ";
 
 	if (cmd[1])
 	{
 		if (_positive(cmd[1]))
 		{
-			exit_value = _atoi(cmd[1]);
+			exit_v = _atoi(cmd[1]);
 		}
 		else
 		{
@@ -70,7 +70,7 @@ void _exit_sh(char **cmd, char **argv, int *stat, int index)
 		}
 	}
 	_farray(cmd);
-	exit(exit_value);
+	exit(exit_v);
 }
 /**
 * _printenv --

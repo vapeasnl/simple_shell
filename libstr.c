@@ -25,20 +25,20 @@ char *_cpy(char *dest, char *src)
 char *_dup(const char *str)
 {
 	char *ptr;
-	int i, lenght = 0;
+	int i, len = 0;
 
 	if (str == NULL)
 		return (NULL);
 	while (*str != '\0')
 	{
-		lenght++;
+		len++;
 		str++;
 	}
-	str = str - lenght;
-	ptr = malloc(sizeof(char) * (lenght + 1));
+	str = str - len;
+	ptr = malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
 		return (NULL);
-	for (i = 0; i <= lenght; i++)
+	for (i = 0; i <= len; i++)
 		ptr[i] = str[i];
 	return (ptr);
 }
@@ -92,11 +92,11 @@ int _cmp(char *s1, char *s2)
 */
 int _len(char *s)
 {
-	int lenght = 0;
+	int len = 0;
 
-	while (s[lenght])
-		lenght++;
-	return (lenght);
+	while (s[len])
+		len++;
+	return (len);
 }
 
 

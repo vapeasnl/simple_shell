@@ -81,7 +81,6 @@ char *_readline(void)
 	size_t len = 0;
 	ssize_t n;
 
-
 	if (isatty(STDIN_FILENO))
 	write(STDOUT_FILENO, "$ ", 2);
 	n = getline(&l, &len, stdin);
@@ -90,7 +89,5 @@ char *_readline(void)
 		free(l);
 		return (NULL);
 	}
-
-
 	return (l);
 }

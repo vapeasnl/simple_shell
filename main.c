@@ -7,9 +7,8 @@
 */
 int main(int argc, char **argv)
 {
-	char *l = NULL;
-	char **cmd = NULL;
-	int stat = 0, index = 0;
+	int stat = 0, i = 0;
+	char *l = NULL, **cmd = NULL;
 	(void) argc;
 
 
@@ -22,15 +21,13 @@ int main(int argc, char **argv)
 				write(STDOUT_FILENO, "\n", 1);
 			return (stat);
 		}
-		index++;
-
-		cmd = tkn(l);
+		i++;
+		cmd = _tkn(l);
 		if (!cmd)
 			continue;
-
 		if (_ib(cmd[0]))
-			_hb(cmd, argv, &stat, index);
+			_hb(cmd, argv, &stat, i);
 		else
-			stat = _exec(cmd, argv, index);
+			stat = _exec(cmd, argv, i);
 	}
 }

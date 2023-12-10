@@ -20,7 +20,7 @@ char *_cat(char *dest, char *src);
 int _cmp(char *s1, char *s2);
 int _len(char *s);
 void _farray(char **arr);
-char **tkn(char *l);
+char **_tkn(char *l);
 int _exec(char **cmd, char **argv, int index);
 char *_getenv(char *var);
 char *_getpath(char *cmd);
