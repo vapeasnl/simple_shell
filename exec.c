@@ -25,15 +25,13 @@ int _exec(char **cmd, char **argv, int index)
 	{
 		if (execve(ccmd, cmd, environ) == -1)
 		{
-			free(ccmd);
-			_farray(cmd);
+			free(ccmd), _farray(cmd);
 		}
 	}
 	else
 	{
 		waitpid(child, &st, 0);
-		_farray(cmd);
-		free(ccmd);
+		_farray(cmd), free(ccmd);
 	}
 	return (WEXITSTATUS(st));
 }

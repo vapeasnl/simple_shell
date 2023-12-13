@@ -22,21 +22,21 @@ int _atoi(char *str)
 */
 char *_itoa(int n)
 {
-	char buffer[25];
+	char tmp[25];
 	int i = 0;
 
 	if (n == 0)
-		buffer[i++] = '0';
+		tmp[i++] = '0';
 	else
 	{
 		while (n > 0)
 		{
-			buffer[i++] = (n % 10) + '0';
+			tmp[i++] = (n % 10) + '0';
 			n /= 10;
 		}
 	}
-	buffer[i] = '\0';
-	_rstring(buffer, i);
-	return (_dup(buffer));
+	tmp[i] = '\0';
+	_rstring(tmp, i);
+	return (_dup(tmp));
 
 }

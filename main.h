@@ -25,13 +25,13 @@ int _exec(char **cmd, char **argv, int index);
 char *_getenv(char *var);
 char *_getpath(char *cmd);
 void _errorprint(char *name, char *cmd, int index);
-void _rstring(char *str, int lenght);
+void _rstring(char *str, int len);
 char *_itoa(int n);
-void _hb(char **cmd, char **argv, int *stat, int index);
+void _hb(char **cmd, char **argv, int *st, int index);
 int _ib(char *cmd);
-void _exit_sh(char **cmd, char **argv, int *stat, int index);
-void _printenv(char **cmd, int *stat);
+void _exit_sh(char **cmd, char **argv, int *st, int index);
+void _printenv(char **cmd, int *st);
 int _atoi(char *str);
-int _positive(char *str);
+int _moujab(char *str);
 
 #endif

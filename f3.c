@@ -6,44 +6,44 @@
 */
 char *_getpath(char *cmd)
 {
-	char *path_env, *full_cmd, *dir;
+	char *epath, *ccmd, *dr;
 	int i;
-	struct stat status;
+	struct stat sts;
 
 	for (i = 0; cmd[i]; i++)
 	{
 		if (cmd[i] == '/')
 		{
-			if (stat(cmd, &status) == 0)
+			if (stat(cmd, &sts) == 0)
 			return (_dup(cmd));
 			return (NULL);
 		}
 	}
 
-	path_env = _getenv("PATH");
-	if (!path_env)
+	epath = _getenv("PATH");
+	if (!epath)
 		return (NULL);
 
-	dir = strtok(path_env, ":");
-	while (dir)
+	dr = strtok(epath, ":");
+	while (dr)
 	{
 
-		full_cmd = malloc(_len(dir) + _len(cmd) + 2);
-		if (full_cmd)
+		ccmd = malloc(_len(dr) + _len(cmd) + 2);
+		if (ccmd)
 		{
-			_cpy(full_cmd, dir);
-			_cat(full_cmd, "/");
-			_cat(full_cmd, cmd);
-			if (stat(full_cmd, &status) == 0)
+			_cpy(ccmd, dr);
+			_cat(ccmd, "/");
+			_cat(ccmd, cmd);
+			if (stat(ccmd, &sts) == 0)
 			{
-			free(path_env);
-			return (full_cmd);
+			free(epath);
+			return (ccmd);
 			}
-			free(full_cmd), full_cmd = NULL;
-			dir = strtok(NULL, ":");
+			free(ccmd), ccmd = NULL;
+			dr = strtok(NULL, ":");
 		}
 	}
-	free(path_env);
+	free(epath);
 	return (NULL);
 }
 /**

@@ -7,7 +7,7 @@
 */
 int main(int argc, char **argv)
 {
-	int stat = 0, i = 0;
+	int st = 0, i = 0;
 	char *l = NULL, **cmd = NULL;
 	(void) argc;
 
@@ -19,15 +19,15 @@ int main(int argc, char **argv)
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
-			return (stat);
+			return (st);
 		}
 		i++;
 		cmd = _tkn(l);
 		if (!cmd)
 			continue;
 		if (_ib(cmd[0]))
-			_hb(cmd, argv, &stat, i);
+			_hb(cmd, argv, &st, i);
 		else
-			stat = _exec(cmd, argv, i);
+			st = _exec(cmd, argv, i);
 	}
 }

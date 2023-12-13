@@ -13,8 +13,7 @@ void _farray(char **arr)
 
 	for (i = 0; arr[i]; i++)
 	{
-		free(arr[i]);
-		arr[i] = NULL;
+		free(arr[i]), arr[i] = NULL;
 	}
 	free(arr), arr = NULL;
 }
@@ -41,13 +40,13 @@ void _errorprint(char *name, char *cmd, int index)
 /**
 * _rstring --
 * @str: --
-* @lenght: --
+* @len: --
 * Return: --
 */
-void _rstring(char *str, int lenght)
+void _rstring(char *str, int len)
 {
 	char tmp;
-	int start = 0, end = lenght - 1;
+	int start = 0, end = len - 1;
 
 	while (start < end)
 	{
@@ -59,11 +58,11 @@ void _rstring(char *str, int lenght)
 	}
 }
 /**
-* _positive --
+* _moujab --
 * @str: --
 * Return: --
 */
-int _positive(char *str)
+int _moujab(char *str)
 {
 	int i;
 

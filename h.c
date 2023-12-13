@@ -50,7 +50,7 @@ void _exit_sh(char **cmd, char **argv, int *stat, int index)
 
 	if (cmd[1])
 	{
-		if (_positive(cmd[1]))
+		if (_moujab(cmd[1]))
 		{
 			exit_v = _atoi(cmd[1]);
 		}
