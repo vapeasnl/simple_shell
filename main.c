@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-* main - Simple Shell
-* @argc: The number of command-line arguments
-* @argv: An array of strings representing the command-line arguments
-* Return: The exit status of the shell program
-*/
+ * main - Simple Shell
+ * @argc: The number of command-line arguments
+ * @argv: An array of strings representing the command-line arguments
+ * Return: The exit status of the shell program
+ */
 int main(int argc, char **argv)
 {
 	int st = 0, i = 0;

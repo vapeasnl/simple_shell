@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* _atoi Convert a string of digits to an integer
-* @str: String of digits to be converted
-* Return: The integer value of the converted string
-*/
+ * _atoi - Convert a string of digits to an integer
+ * @str: String of digits to be converted
+ * Return: The integer value of the converted string
+ */
 int _atoi(char *str)
 {
 	int i, n = 0;
@@ -16,10 +16,10 @@ int _atoi(char *str)
 	return (n);
 }
 /**
-* _itoa Convert an integer to a string
-* @n: Integer to be converted
-* Return: A dynamically allocated string containing the integer
-*/
+ * _itoa - Convert an integer to a string
+ * @n: Integer to be converted
+ * Return: A dynamically allocated string containing the integer
+ */
 char *_itoa(int n)
 {
 	char tmp[25];

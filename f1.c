@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _farray Free the memory allocated for an array of strings.
+* _farray - Free the memory allocated for an array of strings.
 * @arr: Array of strings to be freed.
 * Return: --
 */
@@ -18,12 +18,12 @@ void _farray(char **arr)
 	free(arr), arr = NULL;
 }
 /**
-* _errorprint Print an error message for a command not found.
-* @name: Program name
-* @cmd: Command that was not found
-* @ind: Index of the command in the argv array
-* Return: --
-*/
+ * _errorprint - Print an error message for a command not found.
+ * @name: Program name
+ * @cmd: Command that was not found
+ * @ind: Index of the command in the argv array
+ * Return: --
+ */
 void _errorprint(char *name, char *cmd, int ind)
 {
 	char *idx, msg[] = ": not found\n";
@@ -38,11 +38,11 @@ void _errorprint(char *name, char *cmd, int ind)
 	free(idx);
 }
 /**
-* _rstring Reverse the characters in a string
-* @str: String to be reversed
-* @len: Length of the string
-* Return: --
-*/
+ * _rstring - Reverse the characters in a string
+ * @str: String to be reversed
+ * @len: Length of the string
+ * Return: --
+ */
 void _rstring(char *str, int len)
 {
 	char tmp;
@@ -58,10 +58,10 @@ void _rstring(char *str, int len)
 	}
 }
 /**
-* _moujab Check if a string consists only of numerical digits
-* @str: String to be checked
-* Return: --
-*/
+ * _moujab - Check if a string consists only of numerical digits
+ * @str: String to be checked
+ * Return: --
+ */
 int _moujab(char *str)
 {
 	int i;
