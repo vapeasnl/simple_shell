@@ -23,29 +23,29 @@ int _ib(char *cmd)
 * _hb --
 * @cmd: --
 * @argv: --
-* @stat: --
+* @st: --
 * @index: --
 * Return: --
 */
-void _hb(char **cmd, char **argv, int *stat, int index)
+void _hb(char **cmd, char **argv, int *st, int index)
 {
 	if (_cmp(cmd[0], "exit") == 0)
-	_exit_sh(cmd, argv, stat, index);
+	_exit_sh(cmd, argv, st, index);
 
 	else if (_cmp(cmd[0], "env") == 0)
-		_printenv(cmd, stat);
+		_printenv(cmd, st);
 }
 /**
 * _exit_sh --
 * @cmd: --
 * @argv: --
-* @stat: --
+* @st: --
 * @index: --
 * Return: --
 */
-void _exit_sh(char **cmd, char **argv, int *stat, int index)
+void _exit_sh(char **cmd, char **argv, int *st, int index)
 {
-	int exit_v = (*stat);
+	int exit_v = (*st);
 	char *idx, msg[] = ": exit: Illegal number: ";
 
 	if (cmd[1])
@@ -65,7 +65,7 @@ void _exit_sh(char **cmd, char **argv, int *stat, int index)
 			write(STDERR_FILENO, "\n", 1);
 			free(idx);
 			_farray(cmd);
-			(*stat) = 2;
+			(*st) = 2;
 			return;
 		}
 	}
@@ -75,10 +75,10 @@ void _exit_sh(char **cmd, char **argv, int *stat, int index)
 /**
 * _printenv --
 * @cmd: --
-* @stat: --
+* @st: --
 * Return: --
 */
-void _printenv(char **cmd, int *stat)
+void _printenv(char **cmd, int *st)
 {
 	int i;
 
@@ -88,5 +88,5 @@ void _printenv(char **cmd, int *stat)
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	_farray(cmd);
-	(*stat) = 0;
+	(*st) = 0;
 }
