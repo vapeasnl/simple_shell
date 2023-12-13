@@ -21,14 +21,14 @@ void _farray(char **arr)
 * _errorprint --
 * @name: --
 * @cmd: --
-* @index: --
+* @ind: --
 * Return: --
 */
-void _errorprint(char *name, char *cmd, int index)
+void _errorprint(char *name, char *cmd, int ind)
 {
 	char *idx, msg[] = ": not found\n";
 
-	idx = _itoa(index);
+	idx = _itoa(ind);
 	write(STDERR_FILENO, name, _len(name));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, idx, _len(idx));

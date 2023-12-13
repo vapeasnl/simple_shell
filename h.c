@@ -24,13 +24,13 @@ int _ib(char *cmd)
 * @cmd: --
 * @argv: --
 * @st: --
-* @index: --
+* @ind: --
 * Return: --
 */
-void _hb(char **cmd, char **argv, int *st, int index)
+void _hb(char **cmd, char **argv, int *st, int ind)
 {
 	if (_cmp(cmd[0], "exit") == 0)
-	_exit_sh(cmd, argv, st, index);
+	_exit_sh(cmd, argv, st, ind);
 
 	else if (_cmp(cmd[0], "env") == 0)
 		_printenv(cmd, st);
@@ -40,10 +40,10 @@ void _hb(char **cmd, char **argv, int *st, int index)
 * @cmd: --
 * @argv: --
 * @st: --
-* @index: --
+* @ind: --
 * Return: --
 */
-void _exit_sh(char **cmd, char **argv, int *st, int index)
+void _exit_sh(char **cmd, char **argv, int *st, int ind)
 {
 	int exit_v = (*st);
 	char *idx, msg[] = ": exit: Illegal number: ";
@@ -56,7 +56,7 @@ void _exit_sh(char **cmd, char **argv, int *st, int index)
 		}
 		else
 		{
-			idx = _itoa(index);
+			idx = _itoa(ind);
 			write(STDERR_FILENO, argv[0], _len(argv[0]));
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, idx, _len(idx));

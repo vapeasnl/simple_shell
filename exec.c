@@ -3,10 +3,10 @@
 * _exec --
 * @cmd: --
 * @argv: --
-* @index: --
+* @ind: --
 * Return: --
 */
-int _exec(char **cmd, char **argv, int index)
+int _exec(char **cmd, char **argv, int ind)
 {
 	int st;
 	char *ccmd;
@@ -15,7 +15,7 @@ int _exec(char **cmd, char **argv, int index)
 	ccmd = _getpath(cmd[0]);
 	if (!ccmd)
 	{
-		_errorprint(argv[0], cmd[0], index);
+		_errorprint(argv[0], cmd[0], ind);
 		_farray(cmd);
 		return (127);
 	}
