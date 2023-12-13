@@ -1,7 +1,9 @@
 #include "main.h"
 /**
 * _exec Execute a command
+*
 * Description: --
+*
 * @cmd: Array of strings representing the command and its arguments
 * @argv: Array of strings representing the program and its arguments
 * @ind: Index of the command in the argv array
