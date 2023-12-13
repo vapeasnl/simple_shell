@@ -1,12 +1,7 @@
 #include "main.h"
 /**
 * _exec Execute a command
-* Description: This function takes a command along with
-* its arguments and executes it.
-* It uses fork to create a child process, which then uses execve to execute
-* the specified command. The function waits for the child process to complete
-* and returns the exit status of the executed command.
-*
+* Description: --
 * @cmd: Array of strings representing the command and its arguments
 * @argv: Array of strings representing the program and its arguments
 * @ind: Index of the command in the argv array
