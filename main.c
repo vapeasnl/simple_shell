@@ -1,9 +1,9 @@
 #include "main.h"
 /**
 * main - Simple Shell
-* @argc: --
-* @argv: --
-* Return: --
+* @argc: The number of command-line arguments
+* @argv: An array of strings representing the command-line arguments
+* Return: The exit status of the shell program
 */
 int main(int argc, char **argv)
 {
