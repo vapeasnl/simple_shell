@@ -1,8 +1,8 @@
 #include "main.h"
 /**
-* _tkn --
-* @l: --
-* Return: --
+* _tkn Tokenize a line into an array of strings
+* @l: Line of input to be tokenized
+* Return: An array of strings representing the tokens, or NULL on failure
 */
 char **_tkn(char *l)
 {
