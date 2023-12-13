@@ -1,8 +1,8 @@
 #include "main.h"
 /**
-* _ib --
-* @cmd: --
-* Return: --
+* _ib Check if a command is a built-in command
+* @cmd: Command to be checked
+* Return: 1 if the command is a built-in command, 0 otherwise
 */
 int _ib(char *cmd)
 {
@@ -20,12 +20,12 @@ int _ib(char *cmd)
 	return (0);
 }
 /**
-* _hb --
-* @cmd: --
-* @argv: --
-* @st: --
-* @ind: --
-* Return: --
+* _hb Handle built-in commands
+* @cmd: Array of strings representing the command and its arguments
+* @argv: Array of strings representing the program and its arguments
+* @st: Pointer to the exit status
+* @ind: Index of the command in the argv array
+* Return: None
 */
 void _hb(char **cmd, char **argv, int *st, int ind)
 {
@@ -36,12 +36,12 @@ void _hb(char **cmd, char **argv, int *st, int ind)
 		_printenv(cmd, st);
 }
 /**
-* _exit_sh --
-* @cmd: --
-* @argv: --
-* @st: --
-* @ind: --
-* Return: --
+* _exit_sh Handle the "exit" built-in command
+* @cmd: Array of strings representing the command and its arguments.
+* @argv: Array of strings representing the program and its arguments
+* @st: Pointer to the exit status
+* @ind: Index of the command in the argv array
+* Return: None
 */
 void _exit_sh(char **cmd, char **argv, int *st, int ind)
 {
@@ -73,10 +73,10 @@ void _exit_sh(char **cmd, char **argv, int *st, int ind)
 	exit(exit_v);
 }
 /**
-* _printenv --
-* @cmd: --
-* @st: --
-* Return: --
+* _printenv Handle the "env" built-in command
+* @cmd: Array of strings representing the command and its arguments
+* @st: Pointer to the exit statu
+* Return: None
 */
 void _printenv(char **cmd, int *st)
 {
