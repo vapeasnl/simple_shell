@@ -1,8 +1,8 @@
 #include "main.h"
 /**
-* _getpath --
-* @cmd: --
-* Return: --
+* _getpath Find the full path of a command
+* @cmd: Command name for which to find the full path
+* Return: The full path of the command if found, or NULL if not found
 */
 char *_getpath(char *cmd)
 {
@@ -47,9 +47,9 @@ char *_getpath(char *cmd)
 	return (NULL);
 }
 /**
-* _getenv --
-* @var: --
-* Return: --
+* _getenv Get the value of an environment variable
+* @var: Name of the environment variable
+* Return: The value of the environment variable if found, or NULL
 */
 char *_getenv(char *var)
 {
@@ -72,8 +72,8 @@ char *_getenv(char *var)
 	return (NULL);
 }
 /**
-* _rline --
-* Return: --
+* _rline Read a line of input from the standard input
+* Return: A dynamically allocated string containing the read line or NULL
 */
 char *_rline(void)
 {
