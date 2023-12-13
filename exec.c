@@ -10,7 +10,7 @@ int _exec(char **cmd, char **argv, int ind)
 {
 	int st;
 	char *ccmd;
-	pid_t child;
+	pid_t ppid;
 
 	ccmd = _getpath(cmd[0]);
 	if (!ccmd)
@@ -20,8 +20,8 @@ int _exec(char **cmd, char **argv, int ind)
 		return (127);
 	}
 
-	child = fork();
-	if (child == 0)
+	ppid = fork();
+	if (ppid == 0)
 	{
 		if (execve(ccmd, cmd, environ) == -1)
 		{
@@ -30,7 +30,7 @@ int _exec(char **cmd, char **argv, int ind)
 	}
 	else
 	{
-		waitpid(child, &st, 0);
+		waitpid(ppid, &st, 0);
 		_farray(cmd), free(ccmd);
 	}
 	return (WEXITSTATUS(st));

@@ -72,10 +72,10 @@ char *_getenv(char *var)
 	return (NULL);
 }
 /**
-* _readline --
+* _rline --
 * Return: --
 */
-char *_readline(void)
+char *_rline(void)
 {
 	char *l = NULL;
 	size_t len = 0;

@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* main - Simple Shell main fct
-* @argc: argument
-* @argv: argument
-* Return: 0 Always (success)
+* main - Simple Shell
+* @argc: --
+* @argv: --
+* Return: --
 */
 int main(int argc, char **argv)
 {
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
 	while (1)
 	{
-		l = _readline();
+		l = _rline();
 		if (l == NULL)
 		{
 			if (isatty(STDIN_FILENO))
